@@ -490,18 +490,19 @@ def getJPG(path, li=0):
 
 
 # -------------------------- 处理指定path下所有图片并展示 --------------------------
-path = './testp/432x576/'
-for i in getJPG(path):
-    start = datetime.datetime.now()
-    dic = getCoordinate(cv.imread(i), showimg=1)
-    end = datetime.datetime.now()
-    print(i)
-    print('    本次匹配费时%fs:' % (((end - start).microseconds) / 1e6))
-    cv.waitKey(0)
-    cv.destroyAllWindows()
+# path = './testp/432x576/'
+# # path = '../3350/testp/tp/q2/'
+# for i in getJPG(path):
+#     start = datetime.datetime.now()
+#     dic = getCoordinate(cv.imread(i), showimg=1)
+#     end = datetime.datetime.now()
+#     print(i)
+#     print('    本次匹配费时%fs:' % (((end - start).microseconds) / 1e6))
+#     cv.waitKey(0)
+#     cv.destroyAllWindows()
 
-cv.waitKey(0)
-cv.destroyAllWindows()
+# cv.waitKey(0)
+# cv.destroyAllWindows()
 
 
 # -------------------------- 处理指定图片并展示 --------------------------
