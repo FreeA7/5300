@@ -506,10 +506,10 @@ def getJPG(path, li=0):
 
 
 # -------------------------- 处理指定图片并展示 --------------------------
-# img = './feature/TPPPP_5300_TA8C1162BA_TAAOL9C0_3_-90.284_-22.096__S_20181216_050254.jpg'
+# img = './testp/432x576/TPDS0_5300_TA8B2553AA_TAAOL8C0_7_917.649_-1056.08__S_20181201_070454.jpg'
 # start = datetime.datetime.now()
 # dic = getCoordinate(cv.imread(img), showimg=1)
-# # cv.imwrite('./testp/tp/3300_TA881135AR_TAAOLCC0_15_-1061.61_-1003.41__M_20180815_182454_1.jpg', out[1])
+# # cv.imwrite('./testp/432x576/TPDS0_5300_TA8B2553AA_TAAOL8C0_7_917.649_-1056.08__S_20181201_070454.jpg', out[1])
 # end = datetime.datetime.now()
 # print('本次匹配费时%fs:' % (((end - start).microseconds) / 1e6))
 
@@ -518,7 +518,7 @@ def getJPG(path, li=0):
 
 
 # -------------------------- 输出单个重叠情况的测试 --------------------------
-# img = './testp/tp/q1/1.jpg'
+# img = './testp/432x576/TPDS0_5300_TA8B2553AA_TAAOL8C0_7_917.649_-1056.08__S_20181201_070454.jpg'
 # img = cv.imread(img)
 # shape = img.shape
 # start = datetime.datetime.now()
@@ -540,7 +540,7 @@ def getJPG(path, li=0):
 # start = datetime.datetime.now()
 # s = 0
 
-# for img in getJPG('./testp/tp/q2/'):
+# for img in getJPG('./testp/432x576/'):
 #     s += 1
 #     dic = getCoordinate(cv.imread(img))
 #     img = cv.imread(img)
