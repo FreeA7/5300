@@ -386,7 +386,7 @@ def getCoordinate(img, getimg=0, showimg=0):
         cv.namedWindow("match", cv.WINDOW_AUTOSIZE)
         cv.imshow("match", oimg)
     if not getimg:
-        # 返回多边形dic、图片形状、q1还是q2
+        # 返回多边形dic、图片形状
         return ptdic
     else:
         return [1, oimg]
@@ -456,6 +456,8 @@ def getQOut(ptdic, target, shape):
             m1.append(ptdic[key][i])
         if getOverlapping(m1, target, shape):
             sum_m1 += 1
+            if sum_m1 > 1:
+                break
 
     for i in range(len(ptdic['Main'])):
         m2 = []
@@ -463,6 +465,8 @@ def getQOut(ptdic, target, shape):
             m2.append(ptdic[key][i])
         if getOverlapping(m2, target, shape):
             sum_m2 += 1
+            if sum_m2 > 1:
+                break
 
     for i in range(len(ptdic['Main'])):
         m = []
@@ -490,19 +494,15 @@ def getJPG(path, li=0):
 
 
 # -------------------------- 处理指定path下所有图片并展示 --------------------------
-# path = './testp/432x576/'
-# # path = '../3350/testp/tp/q2/'
-# for i in getJPG(path):
-#     start = datetime.datetime.now()
-#     dic = getCoordinate(cv.imread(i), showimg=1)
-#     end = datetime.datetime.now()
-#     print(i)
-#     print('    本次匹配费时%fs:' % (((end - start).microseconds) / 1e6))
-#     cv.waitKey(0)
-#     cv.destroyAllWindows()
-
-# cv.waitKey(0)
-# cv.destroyAllWindows()
+path = './testp/'
+# path = '../3350/testp/tp/q2/'
+for i in getJPG(path):
+    start = datetime.datetime.now()
+    dic = getCoordinate(cv.imread(i), showimg=1, getimg=0)
+    end = datetime.datetime.now()
+    print('    本次匹配费时%fs:' % (((end - start).microseconds) / 1e6))
+    cv.waitKey(0)
+    cv.destroyAllWindows()
 
 
 # -------------------------- 处理指定图片并展示 --------------------------
